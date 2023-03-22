@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)http://127.0.0.1:5500/week%201%20task_files/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Side Hustle. Week 1</title>
+        
+        </head>
+        <body><div class="signup-box">
+           
+          
+            <h1>PERSONAL INFORMATION</h1>
+	<form id="myForm" onsubmit="return validateForm()">
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name" placeholder="Your name..">
+        <br><br>
+
+
+		<label for="email">Email:</label>
+		<input type="text" id="email" name="email" placeholder="Your email..">
+        <br><br>
+
+		<label for="phone">Phone Number:</label>
+		<input type="text" id="phone" name="phone" placeholder="Your phone number..">
+        <br><br>
+
+		<label for="gender">Gender:</label>
+		<select id="gender" name="gender">
+			<option value="">Select Gender</option>
+			<option value="male">Male</option>
+			<option value="female">Female</option>
+		</select>
+        <br><br>
+
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password" placeholder="Your password..">
+
+		<input type="submit" value="Submit">
+	</form>
+
+	
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+<script>
+    function validateForm() {
+        // Get form inputs
+        var name = document.forms["myForm"]["name"].value;
+        var email = document.forms["myForm"]["email"].value;
+        var phone = document.forms["myForm"]["phone"].value;
+        var gender = document.forms["myForm"]["gender"].value;
+        var password = document.forms["myForm"]["password"].value;
+
+        // Check if any input fields are empty
+        if (name == "" || email == "" || phone == "" || gender == "" || password == "") {
+            alert("Please fill out all fields.");
+            return false;
+        }
+
+        // Show success message and prevent form from submitting
+        alert("Form submitted successfully!");
+        return false;
+    }
+</script>
+</div></body></html>
